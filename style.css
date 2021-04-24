@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	color: white;
+}
+
+body{
+	
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+}
+nav .left-side {
+	padding: 28px;
+}
+nav .right-side {
+	display: flex;
+	padding: 28px;
+}
+nav .right-side .nav-item {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.home {
+   	height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#body {
+    background-image: url("Images/home.jpg");
+}
+.welcome {
+	text-align: center;
+	padding-top: 175px;
+	margin: 0 auto;
+
+}
+.section-wrapper {
+	padding: 40px;
+	text-align: center;
+}
+.section-wrapper p{
+ line-height: 150%;
+ font-weight: bold;
+ font-size: 18px;
+}
+
+span {
+  content: "\2694";
+}

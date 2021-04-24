@@ -5,6 +5,10 @@ This is the Gods At War readme
 The purpose of this site is to provide background information
 for the upcoming game of Gods At War.
 
+Main relgions at use: Greek, Norse, Slavic, maybe arabic and egyption gods.
+Introducing: three major african culure gods up to ten gods for each religion hopefully, if not
+will combine until there are at least 3 sets of new gods from african culure, religion or folklore.
+
 Gods At War is a action packed(rpg/card/fighting game).
 Setting: Africa(egypt currently), the world, sacred locations for religions.
 In most Traditional African religions and many other religions around the world, it seems correct to 
