@@ -12,6 +12,7 @@ body{
 nav {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 200px;
 }
 nav .left-side {
 	padding: 28px;
@@ -26,22 +27,22 @@ nav .right-side .nav-item {
 }
 
 .home {
-   	height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
+    background-position: absolute;
     background-size: cover;
 }
 #body {
     background-image: url("Images/home.jpg");
 }
 .welcome {
-	text-align: center;
-	padding-top: 175px;
-	margin: 0 auto;
-
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 .section-wrapper {
-	padding: 40px;
+	margin-top: 200px;
+	margin-bottom: 180px;
 	text-align: center;
 }
 .section-wrapper p{
@@ -52,4 +53,8 @@ nav .right-side .nav-item {
 
 span {
   content: "\2694";
+}
+.footer {
+	text-align: center;
+	margin-bottom: 20px;
 }
