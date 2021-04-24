@@ -1,0 +1,19 @@
+{
+  "name": "godsatwar",
+  "version": "1.0.0",
+  "description": "godsAtWar ------------ This is the Gods At War readme -------------------------------- The purpose of this site is to provide background information for the upcoming game of Gods At War.",
+  "main": "gods.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derriel94/godsAtWar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Derriel94/godsAtWar/issues"
+  },
+  "homepage": "https://github.com/Derriel94/godsAtWar#readme"
+}
