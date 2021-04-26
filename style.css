@@ -4,6 +4,8 @@
 	text-decoration: none;
 	list-style: none;
 	color: white;
+	box-sizing: border-box;
+
 }
 
 body{
@@ -54,7 +56,36 @@ nav .right-side .nav-item {
 span {
   content: "\2694";
 }
+.godImg {
+	height: 220px;
+	width: 220px;
+	border: 2px solid white;
+    border-radius: 25px;
+	margin-bottom: 20px;
+	float: left;
+}
+#godDiv {
+	clear: both;
+	min-height: 220px;
+	background-color: rgba(255,255,255, 0.3);
+	border: 2px solid white;
+    border-radius: 25px;
+}
+#godName {
+	margin: 20px;
+	position: relative;
+	right: 100px;
+
+}
+#godDesc {
+
+
+}
+#godInfo {
+
+}
 .footer {
 	text-align: center;
 	margin-bottom: 20px;
+	clear: both;
 }
