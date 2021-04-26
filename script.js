@@ -7,7 +7,8 @@ const title = document.getElementById('title');
 let section = document.getElementById('section');
 let homeText = document.getElementById('home-text');
 let newHomeText = document.createElement('P');
-let isClicked = false;
+let isGods = false;
+let isArenas = false;
 
 //gods array
 const Gods = [ 
@@ -75,60 +76,116 @@ const Gods = [
 
 ];
 
+const Arenas = [
+	{
+		name: 'The Pyramid of Giza',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'The Mayan Temple',
+		lore: 'Mayan',
+		src:  "Images/mt.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+
+
+];
 
 // NAVBAR
 
 //so the home button starts with an underline
 home.style.textDecoration = "underline";
+home.style.textDecorationColor = "white";
 
 home.onclick = () => {
 	body.style.backgroundImage = "url('Images/home.jpg')";
 	home.style.textDecoration = "underline";
+	home.style.textDecorationColor = "white";
 	dieties.style.textDecoration = "none";
 	locations.style.textDecoration = "none";
-	thanks.style.textDecoration = "none";
-		if (isClicked) {
-		removeGods();
-		isClicked = false;
-	}
+		if (isGods) {
+			removeGods();
+			isGods = false;
+		}
+		 if (isArenas) {
+			removeArenas();
+			isArenas = false;
+		}
 	goHome();
 }
 
 dieties.onclick = () => {
 	body.style.backgroundImage = "url('Images/back.jpg')";
 	dieties.style.textDecoration = "underline";
+	dieties.style.textDecorationColor = "white";
 	home.style.textDecoration = "none";
 	locations.style.textDecoration = "none";
-	thanks.style.textDecoration = "none";
-	if (!isClicked) {
-	insertGods();
-	isClicked = true;
-	}
+	if (!isGods) {
+		insertGods();
+		isGods = true;
+	} 
+	 if (isArenas) {
+		removeArenas();
+		isArenas = false;
+		}
 }
 locations.onclick = () => {
 	body.style.backgroundImage = "url('Images/locations.jpg')";
 	locations.style.textDecoration = "underline";
+	locations.style.textDecorationColor = "white";
 	dieties.style.textDecoration = "none";
 	home.style.textDecoration = "none";
-	thanks.style.textDecoration = "none";
-	if (isClicked) {
+	if (isGods) {
 		removeGods();
-		isClicked = false;
+		isGods = false;
+	} 
+	 if (!isArenas){
+		checkLocations();
+		isArenas = true;
 	}
-	checkLocations();
+	
 }
-thanks.onclick = () => {
-	body.style.backgroundImage = "url('Images/thanks.jpg')";
-	thanks.style.textDecoration = "underline";
-	dieties.style.textDecoration = "none";
-	locations.style.textDecoration = "none";
-	home.style.textDecoration = "none";
-		if (isClicked) {
-		removeGods();
-		isClicked = false;
-	}
-	thankYou();
-}
+
 
 
 const insertGods = () => {
@@ -149,6 +206,7 @@ const insertGods = () => {
 	godImg.src = Gods[i].src;
 	godDesc.innerHTML = Gods[i].desc;
 	section.appendChild(godDiv);
+	section.setAttribute("id", " ");
 	godDiv.appendChild(godImg);
 	godDiv.appendChild(godInfo);
 	godInfo.appendChild(godName)
@@ -164,18 +222,34 @@ const goHome = () => {
 }
 const checkLocations = () => {
 	title.innerHTML = " <span>&#9876;</span> MASSIVE TEMPLES AND SHRINES! <span>&#9876;</span> ";
+	homeText.remove();
+	for (i=0; i < Arenas.length; i++){
+		let arenaDiv = document.createElement('DIV');
+		arenaDiv.setAttribute("id", "arenaDiv");
+		let arenaName = document.createElement('P');
+		arenaName.setAttribute("id", "arenaName");
+		let arenaImg = document.createElement('IMG');
+		arenaImg.setAttribute("id", "arenaImg");
+		arenaName.innerHTML = Arenas[i].name;
+		arenaImg.src = Arenas[i].src;
+		section.setAttribute("id", "arena-wrapper");
+		section.appendChild(arenaDiv);
+		arenaDiv.appendChild(arenaName);
+		arenaDiv.appendChild(arenaImg);
+	}
 
-	section.appendChild(homeText);
+	// section.appendChild(homeText);
 }
-const thankYou = () => {
-	title.innerHTML = " <span>&#9876;</span> THANK YOU! CONTRIBUTE IF YOU'D LIKE! <span>&#9876;</span> ";
-
-	section.appendChild(homeText);
-}
-
 const removeGods = () => {
 	for (i=0; i < Gods.length; i++) {
 		document.getElementById('godDiv').remove();
 	}
 }
+const removeArenas = () => {
+	for (i=0; i < Arenas.length; i++) {
+		document.getElementById('arenaDiv').remove();
+	}
+	section.setAttribute("id", " ");
+}
+
 

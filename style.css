@@ -5,6 +5,7 @@
 	list-style: none;
 	color: white;
 	box-sizing: border-box;
+	font-size: 18px;
 
 }
 
@@ -19,13 +20,24 @@ nav {
 nav .left-side {
 	padding: 28px;
 }
+nav .left-side p {
+	font-size: 2rem;
+	font-weight: bolder;
+	color: red;
+}
 nav .right-side {
 	display: flex;
 	padding: 28px;
+
 }
 nav .right-side .nav-item {
 	padding: 10px;
 	cursor: pointer;
+
+}
+.nav-item p {
+	font-size: 1.2rem;
+	color: red;
 }
 
 .home {
@@ -41,20 +53,65 @@ nav .right-side .nav-item {
 	display: flex;
 	justify-content: center;
 	align-content: center;
+	background-color: rgba(0,0,0, 0.3);
+}
+span {
+  content: "\2694";
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.welcome span {
+	content: "\2694";
+  	font-size: 4rem;
+  	font-weight: bolder;
+}
+.welcome p {
+	font-size: 4rem;
+	font-weight: bolder;
+	color: red;
 }
 .section-wrapper {
 	margin-top: 200px;
 	margin-bottom: 180px;
 	text-align: center;
 }
-.section-wrapper p{
- line-height: 150%;
- font-weight: bold;
- font-size: 18px;
+.section-wrapper p {
+ 	line-height: 150%;
+ 	font-weight: bold;
+ 	font-size: 1.2rem;
+ 	
+}
+#home-text {
+	display: flex;
+}
+#text-title {
+	font-size: 1.8rem;
+	color: red;
 }
 
-span {
-  content: "\2694";
+#arenaDiv {
+	min-height: 180px;
+	min-width: 180px;
+	background-color: rgba(255,255,255, 0.3);
+	margin: 20px auto;
+	border: 1px solid white;
+    border-radius: 5px;
+}
+#arenaImg {
+	height: 160px;
+	width: 160px;
+
+}
+#arenaName {
+	margin-bottom: 10px;
+}
+
+#arena-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
 }
 .godImg {
 	height: 220px;
@@ -85,7 +142,30 @@ span {
 
 }
 .footer {
+	background-color: rgba(0,0,0, 0.5);
 	text-align: center;
-	margin-bottom: 20px;
 	clear: both;
+}
+.footer ul {
+	margin-top: 20px;
+}
+
+.footer ul li {
+	margin: 10px;
+}
+.footer p {
+	color: red;
+	font-size: 1.2rem;
+}
+.icon {
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	border: 1px solid black;
+    border-radius: 10px;
+}
+#closer span{
+  content: "\2694";
+  font-size: 3.5rem;
+  font-weight: bolder;
 }
