@@ -7,13 +7,6 @@ const title = document.getElementById('title');
 let section = document.getElementById('section');
 let homeText = document.getElementById('home-text');
 let newHomeText = document.createElement('P');
-	// let godDiv = document.createElement('DIV');
-    // let godName = document.createElement('P');
-    // let godImg = document.createElement("IMG");
-    // let godDesc = document.createElement("P");
-
-// CSS for Gods
-
 let isClicked = false;
 
 //gods array
@@ -94,6 +87,10 @@ home.onclick = () => {
 	dieties.style.textDecoration = "none";
 	locations.style.textDecoration = "none";
 	thanks.style.textDecoration = "none";
+		if (isClicked) {
+		removeGods();
+		isClicked = false;
+	}
 	goHome();
 }
 
@@ -103,7 +100,10 @@ dieties.onclick = () => {
 	home.style.textDecoration = "none";
 	locations.style.textDecoration = "none";
 	thanks.style.textDecoration = "none";
+	if (!isClicked) {
 	insertGods();
+	isClicked = true;
+	}
 }
 locations.onclick = () => {
 	body.style.backgroundImage = "url('Images/locations.jpg')";
@@ -111,6 +111,10 @@ locations.onclick = () => {
 	dieties.style.textDecoration = "none";
 	home.style.textDecoration = "none";
 	thanks.style.textDecoration = "none";
+	if (isClicked) {
+		removeGods();
+		isClicked = false;
+	}
 	checkLocations();
 }
 thanks.onclick = () => {
@@ -119,23 +123,17 @@ thanks.onclick = () => {
 	dieties.style.textDecoration = "none";
 	locations.style.textDecoration = "none";
 	home.style.textDecoration = "none";
+		if (isClicked) {
+		removeGods();
+		isClicked = false;
+	}
 	thankYou();
 }
 
-//adding in god page to switch dynamically
-// const createGods = () => {
-// let godDiv = document.createElement('DIV');
-// let godName = document.createElement('P');
-// let godImg = document.createElement("IMG");
-// let godDesc = document.createElement("P");
-// godDiv.style.display = 'flex';
-// }
 
 const insertGods = () => {
 	title.innerHTML = " <span>&#9876;</span> Know your Gods! <span>&#9876;</span> ";
 	homeText.remove();
-	// const newSection = document.createElement('DIV');
-	// newSection.classList.add('section-wrapper');
 	for (i=0; i < Gods.length; i++) {
 	let godDiv = document.createElement('DIV');
 	godDiv.setAttribute("id", "godDiv");
@@ -156,47 +154,25 @@ const insertGods = () => {
 	godInfo.appendChild(godName)
 	godInfo.appendChild(godDesc);
     }
-//     isClicked = true;
-//     if (isClicked) {
-// 		 dieties.onclick = function() {
-//      return false; }
-//  	} else {
-//     	dieties.onclick = () => {
-// 	body.style.backgroundImage = "url('Images/back.jpg')";
-// 	dieties.style.textDecoration = "underline";
-// 	home.style.textDecoration = "none";
-// 	locations.style.textDecoration = "none";
-// 	thanks.style.textDecoration = "none";
-// 	insertGods();
-// }
-//     }
+
 
 }
 const goHome = () => {
 	title.innerHTML = " <span>&#9876;</span> WELCOME TO GODS AT WAR! <span>&#9876;</span> ";
-	removeGods();
 	section.appendChild(homeText);
-	// isClicked = false;
-	// removeit();
-	// const newSection = document.createElement('DIV');
-	// newSection.classList.add('section-wrapper');
-	// body.appendChild(newSection);
-	// newSection.appendChild(homeText);
+
 }
 const checkLocations = () => {
 	title.innerHTML = " <span>&#9876;</span> MASSIVE TEMPLES AND SHRINES! <span>&#9876;</span> ";
-	removeGods();
+
 	section.appendChild(homeText);
 }
 const thankYou = () => {
 	title.innerHTML = " <span>&#9876;</span> THANK YOU! CONTRIBUTE IF YOU'D LIKE! <span>&#9876;</span> ";
-	removeGods();
+
 	section.appendChild(homeText);
 }
 
-// const removeit = () => {
-// 	 homeText.remove();
-// }
 const removeGods = () => {
 	for (i=0; i < Gods.length; i++) {
 		document.getElementById('godDiv').remove();
