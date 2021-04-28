@@ -7,6 +7,7 @@ const title = document.getElementById('title');
 let section = document.getElementById('section');
 let homeText = document.getElementById('home-text');
 let newHomeText = document.createElement('P');
+let media = document.getElementById('media-wrapper');
 let isGods = false;
 let isArenas = false;
 
@@ -127,6 +128,36 @@ const Arenas = [
 		lore: ' Egyptian',
 		src:  "Images/pog.jpg"
 	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
+	{
+		name: 'Pyramid of Giesa',
+		lore: ' Egyptian',
+		src:  "Images/pog.jpg"
+	},
 
 
 ];
@@ -155,7 +186,7 @@ home.onclick = () => {
 }
 
 dieties.onclick = () => {
-	body.style.backgroundImage = "url('Images/back.jpg')";
+	body.style.backgroundImage = "url('Images/back2.jpg')";
 	dieties.style.textDecoration = "underline";
 	dieties.style.textDecorationColor = "white";
 	home.style.textDecoration = "none";
@@ -163,6 +194,7 @@ dieties.onclick = () => {
 	if (!isGods) {
 		insertGods();
 		isGods = true;
+		media.remove();
 	} 
 	 if (isArenas) {
 		removeArenas();
@@ -170,7 +202,7 @@ dieties.onclick = () => {
 		}
 }
 locations.onclick = () => {
-	body.style.backgroundImage = "url('Images/locations.jpg')";
+	body.style.backgroundImage = "url('Images/back3.jpg')";
 	locations.style.textDecoration = "underline";
 	locations.style.textDecorationColor = "white";
 	dieties.style.textDecoration = "none";
@@ -178,12 +210,29 @@ locations.onclick = () => {
 	if (isGods) {
 		removeGods();
 		isGods = false;
+		media.remove();
 	} 
 	 if (!isArenas){
 		checkLocations();
 		isArenas = true;
 	}
 	
+}
+media.onclick = () => {
+	body.style.backgroundImage = "url('Images/back2.jpg')";
+	dieties.style.textDecoration = "underline";
+	dieties.style.textDecorationColor = "white";
+	home.style.textDecoration = "none";
+	locations.style.textDecoration = "none";
+	if (!isGods) {
+		insertGods();
+		isGods = true;
+		media.remove();
+	} 
+	 if (isArenas) {
+		removeArenas();
+		isArenas = false;
+		}
 }
 
 
@@ -218,6 +267,7 @@ const insertGods = () => {
 const goHome = () => {
 	title.innerHTML = " <span>&#9876;</span> WELCOME TO GODS AT WAR! <span>&#9876;</span> ";
 	section.appendChild(homeText);
+	section.appendChild(media);
 
 }
 const checkLocations = () => {
